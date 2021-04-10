@@ -1,22 +1,24 @@
 import discord
 from discord.ext import commands
 
+bot_name = "Enli"
+
 
 client = commands.Bot(command_prefix= '/')
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Streaming("Azer v1"))
-    print('Bot is Online and running')
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("Enli V1"))
+    print(f'{bot_name}: I am running smooth as pie')
 
 
 @client.event
 async def on_member_join(member):
-    print(f'{member} has joined a server')
+    print(f'{bot_name}:{member} has joined a server')
 
 @client.event
 async def on_member_remove(member):
-    print(f"{member} has left a server")
+    print(f"{bot_name}:{member} has left a server")
 
 
 @client.command()
@@ -55,4 +57,4 @@ async def unban(ctx, *, member):
 
 
 
-client.run('ODMwMDAzOTEyNTg5MTgwOTM5.YHAXYQ.q5aDSmETCYDhOLxLMfrCSvFIhrk')
+client.run('ODMwMDAzOTEyNTg5MTgwOTM5.YHAXYQ.ZFHYamx5-4B5PXHnQa26VXqg_k4')
