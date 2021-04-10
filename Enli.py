@@ -4,7 +4,7 @@ from discord.ext import commands
 bot_name = "Enli"
 
 
-client = commands.Bot(command_prefix= '/')
+client = commands.Bot(command_prefix= '.')
 
 @client.event
 async def on_ready():
@@ -34,17 +34,26 @@ async def clearscreen(ctx, amount=3):
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
     print(f'{member} has been banned for {reason}')  
+
+@client.command()
+async def helpEnli(ctx):
+    await ctx.send(f"//English\\")
+    await ctx.send(f"{bot_name}: Hi there i'm Enli and these are my commands:")
+    await ctx.send(f"{bot_name}: .helpEnli: This gives you my command sheet")
+    await ctx.send(f"{bot_name}: .clearscreen: this clears the top 3 msgs above ")
+    await ctx.send(f"{bot_name}: for the time being these are the only commands avalivable for members more commands wil follow")
+    await ctx.send("//Dutch/Nederlands\\")
+    await ctx.send(f"{bot_name}: hey ik ben Enli en dit zijn mijn commands:")
+    await ctx.send(f"{bot_name}: .helpEnli: dit geeft mijn commands weer")
+    await ctx.send(f"{bot_name}: .clearscreen: dit verwijderd de 3 berichten boven je")
+    await ctx.send(f"{bot_name}: tot nu toe zijn dit de enige commands beschikbaar voor leden meer commands volgen")
     
 @client.command()
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    print(f'{member} has been kicked for {reason}')  
+    print(f'{member} has been kicked for {reason}') 
 
-@client.command()
-async def help(ctx):
-    await ctx.send(f"{bot_name}: Hi there i'm Enli and these are my commands:")
-    await ctx.send(f"{bot_name}: /help: This gives you my command sheet")
-    await ctx.send(f"{bot_name}: /clearscreen: this clears the top 3 msgs above you")
+
 
 @client.command()
 async def unban(ctx, *, member):
