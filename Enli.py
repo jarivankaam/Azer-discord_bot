@@ -40,6 +40,11 @@ async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
     print(f'{member} has been kicked for {reason}')  
 
+@client.command()
+async def help(ctx):
+    await ctx.send(f"{bot_name}: Hi there i'm Enli and these are my commands:")
+    await ctx.send(f"{bot_name}: /help: This gives you my command sheet")
+    await ctx.send(f"{bot_name}: /clearscreen: this clears the top 3 msgs above you")
 
 @client.command()
 async def unban(ctx, *, member):
@@ -57,4 +62,4 @@ async def unban(ctx, *, member):
 
 
 
-client.run('ODMwMDAzOTEyNTg5MTgwOTM5.YHAXYQ.ZFHYamx5-4B5PXHnQa26VXqg_k4')
+client.run('')
