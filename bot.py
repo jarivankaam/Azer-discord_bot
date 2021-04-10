@@ -6,7 +6,7 @@ client = commands.Bot(command_prefix= '/')
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("Azer v1"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Streaming("Azer v1"))
     print('Bot is Online and running')
 
 
