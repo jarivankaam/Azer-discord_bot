@@ -71,4 +71,4 @@ async def unban(ctx, *, member):
 
 
 
-client.run('')
+client.run('#youre bot token')
